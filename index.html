@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico">
+    <title></title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../static.divinitor.com/site/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="../../static.divinitor.com/site/fav/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../../static.divinitor.com/site/fav/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://static.divinitor.com/site/fav/manifest.json">
+    <meta name="theme-color" content="#131315">
+    <meta property="og:site_name" content="dunno something?">
+    <meta property="og:image" content="../../divinitor.com/resources/img/dv-logo.png">
+    <meta property="og:title" content="Lucid">
+    <meta property="og:description" content="Side project to alleviate my pain">
+    <link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          var timeSelector = document.querySelector('.selector');
+
+          function updateTime() {
+              
+              var timezone = 'Asia/Singapore'; 
+              var options = { timeZone: timezone, hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+
+              
+              var currentTime = new Date().toLocaleTimeString('en-US', options);
+
+              var gmtOffset = new Date().toLocaleTimeString('en-US', { timeZoneName: 'short', timeZone: timezone });
+
+              
+              timeSelector.innerHTML = '<i class="fa fa-globe"></i>  ( ' + gmtOffset + ')';
+          }
+
+          
+          updateTime();
+
+          
+          setInterval(updateTime, 1000);
+      });
+  </script>
+    <script>
+       document.addEventListener("DOMContentLoaded", function() {
+            var menuIcon = document.querySelector('.menu-icon');
+            var mobileMenu = document.querySelector('.mobile');
+
+            function toggleMenu() {
+                
+                mobileMenu.style.opacity = (mobileMenu.style.opacity === '1') ? '0' : '1';
+
+                
+                mobileMenu.style.pointerEvents = (mobileMenu.style.pointerEvents === 'auto') ? 'none' : 'auto';
+            }
+
+            
+            menuIcon.addEventListener('click', toggleMenu);
+        });
+  </script>
+  </script>
+</head>
+<body>
+  <div class="snipcss-J3Gkj">
+    <div class="startup hidden" id="startup-shade">
+      <div class="container">
+        <div class="sub"> </div>
+        <div class="title"> </div>
+        <div class="detail"> </div>
+      </div>
+    </div>
+    <div id="app" class="">
+      <div class="site-header">
+        <div class="header-left">
+          <a href="/" class="header-link router-link-exact-active router-link-active">
+            <h1> LUCID </h1>
+            <div class="subtitle"> Semi-Automated E-Library </div>
+          </a>
+        </div>
+        <div class="mobile-header-right mobile-only">
+          <div data-v-1739f80a="" class="nav">
+            <div data-v-1739f80a="" class="mobile" style="opacity: 0; transition: opacity 0.5s ease ; pointer-events: none;">
+              <h1 data-v-1739f80a="">Navigation</h1>
+              <ul data-v-1739f80a="" style="transform: translateX(0px); opacity: 1;">
+                <a data-v-1739f80a="" href="/" class="router-link-exact-active router-link-active">
+                  <li data-v-1739f80a="">Home</li>
+                </a>
+                <a data-v-1739f80a="" href="/class.html" class="">
+                  <li data-v-1739f80a="">MODULES</li>
+                </a>
+                <a data-v-1739f80a="" href="/skillsim.html" class="">
+                  <li data-v-1739f80a="" class="new">Skill Sim (BETA)</li>
+                </a>
+                <a data-v-1739f80a="" href="/resources.html" class="">
+                  <li data-v-1739f80a="">Resources</li>
+                </a>
+              </ul>
+            </div>
+            <div data-v-1739f80a="" class="mobile-only">
+              <div data-v-1739f80a="" class="menu-icon">
+                <i data-v-1739f80a="" class="fa fa-navicon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="auth-box">
+        <div data-v-30222694="" class="site-auth-header">
+          <div data-v-30222694="" error="true" class="guest">
+            <div data-v-30222694="">
+              <p data-v-30222694=""> Hello, <strong data-v-30222694=""> Guest! </strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div><div class="region-indicator">
+        <div data-v-4f32b89c="" class="locale-select">
+          <div data-v-4f32b89c="" class="selector">
+            <i data-v-4f32b89c="" class="fa fa-globe">
+
+            </i>
+          </div>
+        </div>
+      </div><div class="appbody">
+        <div class="flex-box">
+          <div class="left-pane mobile-hide">
+            <div data-v-1739f80a="" class="nav">
+              <div data-v-1739f80a="" class="mobile-hide">
+                <h1 data-v-1739f80a=""> Navigation </h1>
+                <ul data-v-1739f80a="">
+                  <a data-v-1739f80a="" href="/" class="router-link-exact-active router-link-active">
+                    <li data-v-1739f80a=""> Home </li>
+                  </a>
+                  <a data-v-1739f80a="" href="/class.html" class="">
+                    <li data-v-1739f80a="">MODULES</li>
+                  </a>
+                  </a>
+                  <a data-v-1739f80a="" href="/videos.html" class="">
+                    <li data-v-1739f80a="">Videos</li>
+                  </a>
+                  <a data-v-1739f80a="" href="/skillsim.html" class="">
+                    <li data-v-1739f80a="" class="new">Skill Sim (BETA)</li>
+                  </a>
+                  <a data-v-1739f80a="" href="/resources.html" class="">
+                    <li data-v-1739f80a="">Resources</li>
+                  </a>
+                </ul>
+                <div data-v-1739f80a="" class="related-links">
+                  <div data-v-1739f80a="" class="link">
+                    <a data-v-1739f80a="" href="https://athenaproject.netlify.app/" target="_blank"> Home </a>
+                  </div>
+                  <div data-v-1739f80a="" class="link">
+                    <a data-v-1739f80a="" href="https://discord.gg/XFcyMqE" target="_blank"> Discord </a>
+                  </div>
+                  <div data-v-1739f80a="" class="link-header"> Athena </div>
+                </div>
+              </div>
+              <div data-v-1739f80a="" class="mobile-only">
+                <div data-v-1739f80a="" class="menu-icon">
+                  <i data-v-1739f80a="" class="fa fa-navicon"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-pane">
+            <div data-v-489c3298="" class="home">
+              <h1 data-v-489c3298=""> Welcome </h1>
+              <p data-v-489c3298=""> This site provides information on various aspects of Computer System Services. Information on Installing and Configuring Computer components,Setting up computer Networks, and more are or will be available here. </p>
+              <p data-v-489c3298=""> Begin by selecting a category in the navigation pane. </p>
+              <p data-v-489c3298="">
+                <a data-v-489c3298="" href="https://www.facebook.com/DryMaterWelon" target="_blank"> Contact me if you also want to contribute &#127892; <br data-v-489c3298="">
+                </a>
+                <a data-v-489c3298="" href="https://discord.gg/F6dzBfhPkY" target="_blank"> Join my friend's discord server! <br data-v-489c3298="">
+                </a>
+              </p>
+              <h2 data-v-489c3298=""> Website Information </h2>
+              <div data-v-489c3298="" class="tag-table">
+                <div data-v-489c3298="" class="row"></div>
+                <div data-v-489c3298="" class="row">
+                  <div data-v-489c3298="" class="rowhead"> Version </div>
+                  <div data-v-489c3298="" class="data"> 1.5.8A </div>
+                </div>
+                <div data-v-489c3298="" class="row">
+                  <div data-v-489c3298="" class="rowhead"> Updated </div>
+                  <div data-v-489c3298="" class="data"> DEC 5 2023 19:34 PST </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="startup" started="true">
+        <div class="container">
+          <div class="sub"> Divinitor </div>
+          <div class="title"> Minerva </div>
+          <div class="detail"> Now loading </div>
+        </div>
+      </div>
+      <div id="tooltip-host"></div>
+</body>
+</html>
