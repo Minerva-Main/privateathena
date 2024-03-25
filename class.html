@@ -63,64 +63,59 @@
   </script>
 </head>
 <body>
-  <script>
-   document.addEventListener('DOMContentLoaded', function() {
-  // Get the modal element
-  var modal = document.querySelector('.modal');
-
-  // Get the modal content element
-  var modalContent = document.querySelector('.modal-content');
-
-  // Add event listener to detect clicks outside the modal
-  document.addEventListener('click', function(event) {
-    // Check if the clicked element is outside the modal content
-    if (!modalContent.contains(event.target)) {
-      closeModal();
-    }
-  });
-
-  // Function to close the modal
-  function closeModal() {
-    modal.style.display = 'none';
-  }
-});
-  </script>
-  <div data-v-63e9d005="" class="first-run snipcss-sXiSP">
-  <div data-v-63e9d005="" class="modal-shade style-FUywe" id="style-FUywe">
-  </div>
-  <div data-v-63e9d005="" class="modal">
-    <div data-v-63e9d005="" class="modal-inner style-IgwCM" id="style-IgwCM">
-      <div data-v-63e9d005="" class="modal-content snipcss0-0-0-1">
-        <div data-v-63e9d005="" id="0" class="page snipcss0-1-1-2" active="true">
-          <div data-v-63e9d005="" class="content content-in snipcss0-2-2-3 style-w4ffd" active="true" id="style-w4ffd">
-            <div data-v-63ced071="" class="options-grid">
-              <a class="option" data-v-63ced071="" href="/css">
-                  <h2 data-v-63ced071="" class="heading"> Week 1 <div data-v-63ced071="" ></div>
-                  </h2>
+  
+  <div class="modal">
+    <div class="modal-content">
+        <div class="modal-body">
+          <h1 data-v-63ced071="" class="divided">Computer System Services</h1>
+          <button class="close-button">&times;</button>
+           <div class="options-grid">
+            <a data-v-63ced071="" href="/general/stat/" class="option">
+              <h2 data-v-63ced071="" class="heading">
+               WEEK 1 
+               <div data-v-63ced071="">
+               </div>
+               </h2>
+            </a>
+              <a data-v-63ced071="" href="/general/stat/" class="option">
+                <h2 data-v-63ced071="" class="heading">
+                 WEEK 2 
+                 <div data-v-63ced071="">
+                 </div>
+                 </h2>
               </a>
-            </div>
-            <div data-v-63ced071="" class="options-grid">
-              <a class="option" data-v-63ced071="" href="/css">
-                  <h2 data-v-63ced071="" class="heading"> Week 2 <div data-v-63ced071=""></div>
-                  </h2>
-              </a>
-            </div>
-            </div>
-          </div>
+                <a data-v-63ced071="" href="/general/stat/" class="option">
+                  <h2 data-v-63ced071="" class="heading">
+                    WEEK 3
+                   <div data-v-63ced071="">
+                   </div>
+                   </h2>
+                </a>
+                  <a data-v-63ced071="" href="/general/stat/" class="option">
+                    <h2 data-v-63ced071="" class="heading">
+                     WEEK 4
+                     <div data-v-63ced071="">
+                     </div>
+                     </h2>
+                   </a>
+                   <a data-v-63ced071="" href="/general/stat/" class="option">
+                    <h2 data-v-63ced071="" class="heading">
+                     WEEK 5 
+                     <div data-v-63ced071="">
+                     </div>
+                     </h2>
+                   </a>
+                   <a data-v-63ced071="" href="/general/stat/" class="option">
+                    <h2 data-v-63ced071="" class="heading">
+                     WEEK 6 
+                     <div data-v-63ced071="">
+                     </div>
+                     </h2>
+                   </a>
+           </div>
         </div>
-        <div data-v-63e9d005="" class="page-indicator snipcss0-1-1-38">
-          <div data-v-63e9d005="" class="indicator snipcss0-2-38-39 style-Dg614" active="true" id="style-Dg614">
-          </div>
-          <div data-v-63e9d005="" disabled="disabled" class="indicator snipcss0-2-38-40">
-          </div>
-          <div data-v-63e9d005="" disabled="disabled" class="indicator snipcss0-2-38-41">
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </div>
-
 
 
   <div class="snipcss-J3Gkj">
@@ -254,12 +249,12 @@
                       <div data-v-b57ef698="">
                         <div data-v-b57ef698="" class="count"> Found <span data-v-b57ef698="" class="val">6 Results</span>
                         </div>
-                        <a href="/read1">
-                          <div data-v-b57ef698="" data-id="1" class="midresult" style="display: block;">
-                            <div data-v-b57ef698="" class="mid"> CSS </div>
-                            <div data-v-b57ef698="" class="text"></div> 
+                        <a href="#" id="openModalAnchor">
+                          <div data-v-b57ef698="" data-id="1" class="midresult">
+                              <div data-v-b57ef698="" class="mid">CSS</div>
+                              <div data-v-b57ef698="" class="text"></div> 
                           </div>
-                        </a>
+                      </a>
                         <a href="/read2">
                           <div data-v-b57ef698="" data-id="1" class="midresult" style="display: block;">
                             <div data-v-b57ef698="" class="mid"> FUNDAMENTALS OF ELECTRICITY AND ELECTRONICS </div>
@@ -312,55 +307,67 @@
                   </script>
                   <script>
                    var scriptAppended = false;
-var initialContent = null;
+                var initialContent = null;
 
-// Function to load content
-function loadContent(event) {
-    event.preventDefault(); // Prevent the default behavior of the anchor tag
+                // Function to load content
+                function loadContent(event) {
+                    event.preventDefault(); // Prevent the default behavior of the anchor tag
 
-    var targetDiv = event.target;
-    var isFirstSemesterActive = targetDiv.classList.contains('router-link-exact-active');
+                    var targetDiv = event.target;
+                    var isFirstSemesterActive = targetDiv.classList.contains('router-link-exact-active');
 
-    // If the "FIRST SEMESTER" div is already active and we have initial content, restore it
-    if (isFirstSemesterActive && initialContent !== null) {
-        document.getElementById("content").innerHTML = initialContent;
-        return;
-    }
+                    // If the "FIRST SEMESTER" div is already active and we have initial content, restore it
+                    if (isFirstSemesterActive && initialContent !== null) {
+                        document.getElementById("content").innerHTML = initialContent;
+                        return;
+                    }
 
-    // Otherwise, load new content
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var responseHTML = xhr.responseText;
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(responseHTML, 'text/html');
-            var divToExtract = doc.querySelector('div[data-v-5dbba857][class="uistrings snipcss-5DEmj"]');
-            if (divToExtract) {
-                var extractedHTML = divToExtract.outerHTML;
-                var extractedScript = divToExtract.querySelector('script');
-                document.getElementById("content").innerHTML = extractedHTML;
-                if (extractedScript && !scriptAppended) { // Check if script exists and not already appended
-                    var script = document.createElement('script');
-                    script.innerHTML = extractedScript.innerHTML;
-                    document.body.appendChild(script); // Append the script to the bottom of the body
-                    scriptAppended = true;
-                }
-            } else {
-                document.getElementById("content").innerHTML = "The specified div was not found in the response.";
-            }
-        }
-    };
-    xhr.open('GET', '/class2.html', true);
-    xhr.send();
+                        // Otherwise, load new content
+                        var xhr = new XMLHttpRequest();
+                        xhr.onreadystatechange = function() {
+                            if (xhr.readyState === 4 && xhr.status === 200) {
+                                var responseHTML = xhr.responseText;
+                                var parser = new DOMParser();
+                                var doc = parser.parseFromString(responseHTML, 'text/html');
+                                var divToExtract = doc.querySelector('div[data-v-5dbba857][class="uistrings snipcss-5DEmj"]');
+                                if (divToExtract) {
+                                    var extractedHTML = divToExtract.outerHTML;
+                                    var extractedScript = divToExtract.querySelector('script');
+                                    document.getElementById("content").innerHTML = extractedHTML;
+                                    if (extractedScript && !scriptAppended) { // Check if script exists and not already appended
+                                        var script = document.createElement('script');
+                                        script.innerHTML = extractedScript.innerHTML;
+                                        document.body.appendChild(script); // Append the script to the bottom of the body
+                                        scriptAppended = true;
+                                    }
+                                } else {
+                                    document.getElementById("content").innerHTML = "The specified div was not found in the response.";
+                                }
+                            }
+                        };
+                        xhr.open('GET', '/class2.html', true);
+                        xhr.send();
 
-    // Remove the div with class 'home'
-    var homeDiv = document.querySelector('.uistrings.browse');
-    if (homeDiv) {
-        homeDiv.parentNode.removeChild(homeDiv);
-    }
-}
+                        // Remove the div with class 'home'
+                        var homeDiv = document.querySelector('.uistrings.browse');
+                        if (homeDiv) {
+                            homeDiv.parentNode.removeChild(homeDiv);
+                        }
+                    }
                   </script>
                   <script>
+                    // Get references to the close button and the modal
+                  const closeButton = document.querySelector(".close-button");
+                  const modal = document.querySelector(".modal");
+
+                  // Add click event listener to the close button
+                  closeButton.addEventListener("click", function() {
+                      // Hide the modal
+                      modal.classList.remove("show-modal");
+                  });
+                  </script>
+                  <script>
+
                       document.addEventListener('DOMContentLoaded', function() {
                     // Function to handle search
                     function handleSearch() {
@@ -410,6 +417,18 @@ function loadContent(event) {
         </div>
       </div>
       <div id="tooltip-host"></div>
-     
+      <script>
+                // Get references to the anchor tag and the modal
+        const openModalAnchor = document.getElementById("openModalAnchor");
+        const closemodal = document.querySelector(".modal");
+
+        // Add click event listener to the anchor tag
+        openModalAnchor.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+
+            // Toggle the visibility of the modal
+            modal.classList.toggle("show-modal");
+        });
+      </script>
 </body>
 </html>

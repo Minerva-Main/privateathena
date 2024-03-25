@@ -51,6 +51,7 @@
 * Keep tracking: https://github.com/DevelopmentIL/direction.less
 */
 .first-run[data-v-63e9d005] {
+    
     position: fixed;
     top: 0;
     left: 0;
@@ -1587,16 +1588,18 @@ input.hidden {
     flex-wrap: wrap;
     margin: 20px auto;
     text-align: center
+    
 }
 
 .options-grid .option {
+    margin: 10px;
     position: relative;
     display: block;
     -webkit-box-flex: 0;
     -ms-flex: 0 1 auto;
     flex: 0 1 auto;
-    width: 226px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     text-align: center;
     border: 1px solid #5aa9e5;
     background: rgba(19,19,21,.4);
@@ -1611,15 +1614,7 @@ input.hidden {
 }
 
 .options-grid .option .icon {
-    display: block;
-    margin: 20px 0;
-    font-size: 3em;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    -webkit-transform: translateY(-50%);
-    transform: translateY(-50%)
+   
 }
 
 .options-grid .option:hover {
@@ -1810,6 +1805,7 @@ input[type=text]::placeholder {
 }
 
 .modal {
+
     position: fixed;
     left: 50%;
     top: 50%;
@@ -3229,40 +3225,134 @@ body {
 }
 
 
+/* Scrollbar Track */
+.modal-content::-webkit-scrollbar-track {
+    background-color: transparent; /* Change to match your background color */
+}
+
+/* Scrollbar Handle */
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #5aa9e5; /* Color of the scrollbar handle */
+    border-radius: 10px; /* Adjust as needed */
+}
+
+/* Optionally, you can style the scrollbar itself */
+.modal-content::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+}
+.modal {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px; /* Adjust as needed */
+    z-index: 1000; /* Adjust as needed */
+}
+
+.show-modal {
+    display: block;
+}
+
+.modal-content {
+    height: 360px;
+    max-height: 600px;
+    border: 1px solid #5aa9e5;
+    border-left-width: 6px;
+    background: #131315;
+    position: relative;
+    padding: 20px; /* Adjust padding as needed */
+    z-index: 200; 
+       
+}
+
+/* Close button styles */
+.close {
+    position: absolute;
+    top: 10px; /* Adjust top position as needed */
+    right: 10px; /* Adjust right position as needed */
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Media query for mobile devices */
+@media only screen and (max-width: 600px) {
+    .modal {
+        width: 90%; /* Adjust width for smaller screens */
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
 .first-run[data-v-63e9d005] { 
+
     position: fixed; 
     top: 0; 
     left: 0; 
     bottom: 0; 
     right: 0; 
     z-index: 100;
+    
 } 
 
-:selection { 
-    background: #aaa; 
-    color: #445;
-} 
-
-.modal-shade { 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    bottom: 0; 
-    right: 0; 
-    background-color: rgba(19,19,21,.8);
-} 
-
-.modal { 
-    position: fixed; 
-    left: 50%; 
-    top: 50%; 
-    -webkit-transform: translate(-50%,-50%); 
-    transform: translate(-50%,-50%);
-} 
-
-.first-run .modal-inner[data-v-63e9d005]  { 
+.first-run .modal-inner[data-v-63e9d005] {
     width: 600px;
-} 
+    position: relative;
+}
+
+
+.modal {
+ /* Initially hidden */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 600px;
+    z-index: 1000;
+}
+
+.modal-content {
+    height: 360px;
+    max-height: 600px;
+    border: 1px solid #5aa9e5;
+    border-left-width: 6px;
+    background: #131315;
+    position: relative;
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds modal height */
+}
+
+.modal-header {
+    padding: 10px;
+    background-color: #1a1a1d;
+    color: #fff;
+    border-bottom: 1px solid #5aa9e5;
+    position: relative;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    font-size: 20px;
+    color: #98bcd4;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.modal-body {
+    padding: 20px;
+    color: #fff;
+}
+
+
 
 .first-run .modal-content[data-v-63e9d005]  { 
     z-index: 200; 
@@ -3283,146 +3373,6 @@ body {
     right: 0; 
     padding: 16px 24px;
 } 
-
-.first-run .modal-content .page[active][data-v-63e9d005]  { 
-    display: block;
-} 
-
-.first-run .modal-content .page-indicator[data-v-63e9d005]  { 
-    margin-top: 20px; 
-    text-align: center; 
-    position: absolute; 
-    bottom: -30px; 
-    left: 0; 
-    right: 0; 
-    padding-left: 0;
-} 
-
-.first-run .modal-content .content[data-v-63e9d005]  { 
-    margin: 12px 0; 
-    height: 100%;
-} 
-
-.first-run .modal-content .page-indicator .indicator[data-v-63e9d005]  { 
-    cursor: pointer; 
-    display: inline-block; 
-    margin: 2px 4px; 
-    width: 0; 
-    height: 0; 
-    border: 6px solid transparent; 
-    border-bottom-color: #48a; 
-    position: relative; 
-    top: -6px; 
-    -webkit-transition: border-color .125s ease-in; 
-    transition: border-color .125s ease-in; 
-    -webkit-transform-origin: 50% 100%; 
-    transform-origin: 50% 100%;
-} 
-
-.first-run .modal-content .page-indicator .indicator[active][data-v-63e9d005]  { 
-    border-bottom-color: #98bcd4;
-} 
-
-.first-run .modal-content .page-indicator .indicator[data-v-63e9d005]::after { 
-    content: ""; 
-    position: absolute; 
-    left: -6px; 
-    top: 6px; 
-    width: 0; 
-    height: 0; 
-    border: 6px solid transparent; 
-    border-top-color: #48a; 
-    -webkit-transition: border-color .125s ease-in; 
-    transition: border-color .125s ease-in;
-} 
-
-.first-run .modal-content .page-indicator .indicator[active][data-v-63e9d005]::after { 
-    border-top-color: #98bcd4;
-} 
-
-.first-run .modal-content .page-indicator .indicator[data-v-63e9d005]:hover { 
-    border-bottom-color: #fff;
-} 
-
-.first-run .modal-content .page-indicator .indicator[data-v-63e9d005]:hover::after { 
-    border-top-color: #fff;
-} 
-
-.first-run .modal-content .page-indicator .indicator[disabled][data-v-63e9d005]  { 
-    pointer-events: none; 
-    border-bottom-color: #35383a;
-} 
-
-.first-run .modal-content .page-indicator .indicator[disabled][data-v-63e9d005]::after { 
-    border-top-color: #35383a;
-} 
-
-h1 { 
-    font-family: Geomanist,Segoe UI,Tahoma,Verdana,sans-serif; 
-    color: #98bcd4; 
-    letter-spacing: .3em; 
-    text-transform: uppercase; 
-    font-size: 32px; 
-    margin: 30px 0 10px 0; 
-    padding-bottom: 8px; 
-    font-weight: 400;
-} 
-
-h1:first-child { 
-    margin: 0 0 6px 0;
-} 
-
-.first-run .modal-content h1[data-v-63e9d005]  { 
-    font-size: 20px; 
-    margin-bottom: 8px;
-} 
-
-p { 
-    letter-spacing: -.005em;
-} 
-
-.first-run .modal-content .got-it[data-v-63e9d005]  { 
-    text-align: center; 
-    position: absolute; 
-    bottom: 20px; 
-    left: 0; 
-    right: 0;
-} 
-
-h4 { 
-    font-family: Geomanist,Segoe UI,Tahoma,Verdana,sans-serif; 
-    color: #48a; 
-    font-size: 16px; 
-    margin-bottom: 6px; 
-    margin-top: 18px; 
-    letter-spacing: .1em; 
-    font-weight: 400; 
-    text-transform: uppercase;
-} 
-
-.first-run .modal-content .content p.legal[data-v-63e9d005]  { 
-    font-size: 12px;
-} 
-
-.first-run .modal-content .region-selector[data-v-63e9d005]  { 
-    margin-top: 30px;
-} 
-
-strong { 
-    color: #ddd;
-} 
-
-a { 
-    color: #4783b1; 
-    text-decoration: none; 
-    -webkit-transition: color .125s ease-in; 
-    transition: color .125s ease-in;
-} 
-
-a:hover { 
-    color: #98bcd4;
-} 
-
 button { 
     background: #131315; 
     color: #98bcd4; 
@@ -3500,93 +3450,6 @@ button:hover {
     animation-name: dv-button-ripple;
 } 
 
-.region-select[data-v-ee708bb6] { 
-    width: 100%;
-} 
-
-.region-select .regions[data-v-ee708bb6]  { 
-    display: -webkit-box; 
-    display: -ms-flexbox; 
-    display: flex; 
-    position: relative; 
-    -webkit-box-orient: horizontal; 
-    -webkit-box-direction: normal; 
-    -ms-flex-direction: row; 
-    flex-direction: row; 
-    -ms-flex-wrap: wrap; 
-    flex-wrap: wrap; 
-    width: 100%; 
-    min-width: 0;
-} 
-
-.region-select .regions .region[data-v-ee708bb6]  { 
-    -webkit-box-flex: 0; 
-    -ms-flex: 0 1; 
-    flex: 0 1; 
-    position: relative; 
-    border: 1px solid #98bcd4; 
-    border-top-width: 0; 
-    -webkit-box-sizing: border-box; 
-    box-sizing: border-box; 
-    cursor: pointer; 
-    -webkit-transition: background-color .125s ease-in; 
-    transition: background-color .125s ease-in; 
-    -ms-flex-preferred-size: 100%; 
-    flex-basis: 100%;
-} 
-
-@media only screen and (min-width: 650px){ 
-  .region-select .regions .region[data-v-ee708bb6]  { 
-    -ms-flex-preferred-size: 50%; 
-    flex-basis: 50%;
-  } 
-
-  .region-select .regions .region[data-v-ee708bb6]:first-child  { 
-    border-top-width: 1px;
-  } 
-}     
-
-.region-select .regions .region[data-v-ee708bb6]:first-child  { 
-    border-top-width: 1px;
-} 
-
-.region-select .regions .region[active][data-v-ee708bb6]  { 
-    background: rgba(68,136,170,.2);
-} 
-
-.region-select .regions .region[data-v-ee708bb6]:hover { 
-    background: rgba(152,188,212,.2);
-} 
-
-.region-select .regions .region .region-header[data-v-ee708bb6]  { 
-    text-transform: uppercase; 
-    padding: 12px;
-} 
-
-.region-select .regions .region .version[data-v-ee708bb6]  { 
-    position: absolute; 
-    top: 50%; 
-    right: 8px; 
-    -webkit-transform: translateY(-50%); 
-    transform: translateY(-50%); 
-    font-size: 12px; 
-    font-family: Geomanist,Segoe UI,Tahoma,Verdana,sans-serif; 
-    color: #4783b1;
-} 
-
-.region-select .regions .region .region-header .head[data-v-ee708bb6]  { 
-    font-family: Geomanist,Segoe UI,Tahoma,Verdana,sans-serif; 
-    font-size: 16px; 
-    color: #98bcd4; 
-    letter-spacing: .1em;
-} 
-
-.region-select .regions .region .region-header .subheader[data-v-ee708bb6]  { 
-    font-family: Lato,Segoe UI,Tahoma,Verdana,sans-serif; 
-    font-size: 12px; 
-    color: #5aa9e5; 
-    letter-spacing: .2em;
-} 
 
 
 /* These were inline style tags. Uses id+class to override almost everything */
@@ -3613,6 +3476,7 @@ button:hover {
 #style-Dg614.style-Dg614 {  
    transform: rotate(135deg);  
 }  
+
 
 /*!
 * direction.less v0.1.0
