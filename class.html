@@ -336,7 +336,7 @@
                                     document.getElementById("content").innerHTML = extractedHTML;
                                     if (extractedScript && !scriptAppended) { // Check if script exists and not already appended
                                         var script = document.createElement('script');
-                                        script.innerHTML = extractedScript.innerHTML;
+                                        script.innerHTML = extractedScript.textContent;
                                         document.body.appendChild(script); // Append the script to the bottom of the body
                                         scriptAppended = true;
                                     }
