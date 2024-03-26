@@ -17,55 +17,69 @@
     <meta property="og:description" content="Side project to alleviate my pain">
     <link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          var timeSelector = document.querySelector('.selector');
-
-          function updateTime() {
-              
-              var timezone = 'Asia/Singapore'; 
-              var options = { timeZone: timezone, hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
-
-              
-              var currentTime = new Date().toLocaleTimeString('en-US', options);
-
-              var gmtOffset = new Date().toLocaleTimeString('en-US', { timeZoneName: 'short', timeZone: timezone });
-
-              
-              timeSelector.innerHTML = '<i class="fa fa-globe"></i>  ( ' + gmtOffset + ')';
-          }
-
-          
-          updateTime();
-
-          
-          setInterval(updateTime, 1000);
-      });
-  </script>
-    <script>
-       document.addEventListener("DOMContentLoaded", function() {
-            var menuIcon = document.querySelector('.menu-icon');
-            var mobileMenu = document.querySelector('.mobile');
-
-            function toggleMenu() {
-                // Toggle the opacity property between 0 and 1
-                mobileMenu.style.opacity = (mobileMenu.style.opacity === '1') ? '0' : '1';
-
-                // Toggle the pointer-events property between 'auto' and 'none'
-                mobileMenu.style.pointerEvents = (mobileMenu.style.pointerEvents === 'auto') ? 'none' : 'auto';
-            }
-
-            // Initially, add the event listener
-            menuIcon.addEventListener('click', toggleMenu);
-        });
-  </script>
+    <link rel="stylesheet" href="style.css">\
+    <script src="class2.js"></script>
   </script>
 
 </head>
 
 <body>
-  
+  <script>
+       // Function to load content back
+       function loadContentback(event) {
+                    event.preventDefault(); // Prevent the default behavior of the button
+                    // Otherwise, load new content
+                    var xhr = new XMLHttpRequest();
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            var responseHTML = xhr.responseText;
+                            var parser = new DOMParser();
+                            var doc = parser.parseFromString(responseHTML, 'text/html');
+                            var divToExtract = doc.querySelector('div[data-v-5dbba857][class="uistrings snipcss-5DEmj"]');
+                            if (divToExtract) {
+                                document.getElementById("content").innerHTML = divToExtract.outerHTML;
+                            } else {
+                                document.getElementById("content").innerHTML = "The specified div was not found in the response.";
+                            }
+                        }
+                    };
+                    xhr.open('GET', '/class.html', true);
+                    xhr.send();
+                }
+  </script>
+  <script>
+                      // Attach click event listener to each anchor element
+                      modalAnchors.forEach(anchor => {
+                      anchor.addEventListener('click', function(event) {
+                          event.preventDefault();
+                          const modalId = this.dataset.modalId; // Get the data-modal-id attribute value
+                          const modal = document.getElementById(modalId); // Get the corresponding modal
+                          if (modal) {
+                              modal.classList.add('show-modal'); // Show the modal
+                          }
+                      });
+                  });
+
+                  // Get references to all close buttons
+                  const closeButtons = document.querySelectorAll(".close-button");
+
+                  // Add click event listener to each close button
+                  closeButtons.forEach(button => {
+                      button.addEventListener("click", function() {
+                          const modal = this.closest('.modal'); // Find the parent modal
+                          if (modal) {
+                              modal.classList.remove("show-modal"); // Hide the modal
+                          }
+                      });
+                  });
+  </script>
+ 
+ 
+
+
+
+
+
   <div class="snipcss-J3Gkj">
     <div class="startup hidden" id="startup-shade">
       <div class="container">
@@ -185,7 +199,7 @@
                 <h1 data-v-5dbba857=""> MODULES </h1>
                 <div data-v-5dbba857="" class="button-bar">
                   <div data-v-5dbba857="" class="row-button" onclick="loadContentback(event)"> FIRST SEMESTER </div>
-                  <div data-v-5dbba857="" class="row-button router-link-exact-active router-link-active"  onclick="loadContent(event)" > Second Semester </div>
+                  <div data-v-5dbba857="" class="row-button router-link-exact-active router-link-active"> Second Semester </div>
                 </div>
                 <div data-v-b57ef698="" data-v-5dbba857="" class="uistrings browse">
                     <div data-v-b57ef698="" class="searchbar">
@@ -197,48 +211,48 @@
                         <div data-v-b57ef698="">
                           <div data-v-b57ef698="" class="count"> Found <span data-v-b57ef698="" class="val">7 Results</span>
                           </div>
-                          <a href="/read1">
-                            <div data-v-b57ef698="" data-id="1" class="midresult" style="display: block;">
-                              <div data-v-b57ef698="" class="mid"> CSS </div>
-                              <div data-v-b57ef698="" class="text"></div>
-                            </div>
-                          </a>
-                          <a href="/read2">
+                          <a href="#" class="openModalAnchor" data-modal-id="modalCSS2">
+                          <div data-v-b57ef698="" data-id="1" class="midresult">
+                              <div data-v-b57ef698="" class="mid">CSS</div>
+                              <div data-v-b57ef698="" class="text"></div> 
+                          </div>
+                      </a>  
+                          <a href="#" class="openModalAnchor" data-modal-id="modalFEE">
                             <div data-v-b57ef698="" data-id="1" class="midresult" style="display: block;">
                               <div data-v-b57ef698="" class="mid"> FUNDAMENTALS OF ELECTRICITY AND ELECTRONICS </div>
                               <div data-v-b57ef698="" class="text"></div>
                             </div>
                           </a>
-                          <a href="/read3">
+                          <a href="/read3" class="openModalAnchor" data-modal-id="modalLIT">
                             <div data-v-b57ef698="" data-id="1" class="midresult" style="display: block;">
                               <div data-v-b57ef698="" class="mid"> 21ST CENTURY LITERATURE </div>
                               <div data-v-b57ef698="" class="text"></div>
                             </div>
                           </a>
-                          <a href="/read4">
+                          <a href="/read4" class="openModalAnchor" data-modal-id="modalPE2">
                             <div data-v-b57ef698="" data-id="1" class="midresult" style="display: block;">
-                              <div data-v-b57ef698="" class="mid"> PHYSICAL EDUCATION </div>
+                              <div data-v-b57ef698="" class="mid"> PHYSICAL EDUCATION</div>
                               <div data-v-b57ef698="" class="text"></div>
                             </div>
                           </a>
-                          <a href="/read5">
+                          <a href="/read5" class="openModalAnchor" data-modal-id="modalWI">
                             <div data-v-b57ef698="" data-id="1" class="midresult" style="display: block;">
                               <div data-v-b57ef698="" class="mid"> WORK IMMERSION </div>
                               <div data-v-b57ef698="" class="text"></div>
                             </div>
                           </a>
-                          <a href="/read6">
+                          <a href="/read6" class="openModalAnchor" data-modal-id="modalPD">
                             <div data-v-b57ef698="" data-id="1" class="midresult" style="display: block;">
                               <div data-v-b57ef698="" class="mid"> PERSONAL DEVELOPMENT </div>
                               <div data-v-b57ef698="" class="text"></div>
                             </div>
                           </a>
-                          <a href="/read7">
+                          <a href="/read7" class="openModalAnchor" data-modal-id="modalRP">
                             <div data-v-b57ef698="" data-id="1" class="midresult" style="display: block;">
                               <div data-v-b57ef698="" class="mid"> RESEARCH PROJECT </div>
                               <div data-v-b57ef698="" class="text"></div>
                             </div>
-                      <a href="/read8">
+                      <a href="#" class="openModalAnchor" data-modal-id="modalET">
                             <div data-v-b57ef698="" data-id="1" class="midresult" style="display: block;">
                               <div data-v-b57ef698="" class="mid"> EMPOWERMENT TECHNOLOGY </div>
                               <div data-v-b57ef698="" class="text"></div>
@@ -255,46 +269,7 @@
                       </div>
                     </div>
                     <div id="tooltip-host"></div>
-                    <script>
-                        var scriptAppended = false;
-                    var initialContent = null;
 
-                    // Function to load content
-                    function loadContentback(event) {
-                        event.preventDefault(); // Prevent the default behavior of the anchor tag
-                        // Otherwise, load new content
-                        var xhr = new XMLHttpRequest();
-                        xhr.onreadystatechange = function() {
-                            if (xhr.readyState === 4 && xhr.status === 200) {
-                                var responseHTML = xhr.responseText;
-                                var parser = new DOMParser();
-                                var doc = parser.parseFromString(responseHTML, 'text/html');
-                                var divToExtract = doc.querySelector('div[data-v-5dbba857][class="uistrings snipcss-5DEmj"]');
-                                if (divToExtract) {
-                                    var extractedHTML = divToExtract.outerHTML;
-                                    var extractedScript = divToExtract.querySelector('script');
-                                    document.getElementById("content").innerHTML = extractedHTML;
-                                    if (extractedScript && !scriptAppended) { // Check if script exists and not already appended
-                                        var script = document.createElement('script');
-                                        script.innerHTML = extractedScript.innerHTML;
-                                        document.body.appendChild(script);
-                                        scriptAppended = true;
-                                    }
-                                } else {
-                                    document.getElementById("content").innerHTML = "The specified div was not found in the response.";
-                                }
-                            }
-                        };
-                        xhr.open('GET', '/class.html', true);
-                        xhr.send();
-
-                        // Remove the div with class 'home'
-                        var homeDiv = document.querySelector('.uistrings browse');
-                        if (homeDiv) {
-                            homeDiv.parentNode.removeChild(homeDiv);
-                        }
-                    }
-                    </script>
                   </div>
               </div>
             </div>
@@ -310,39 +285,7 @@
         </div>
       </div>
       <div id="tooltip-host"></div>
-      <script>
-                      document.addEventListener('DOMContentLoaded', function() {
-                        // Function to handle search
-                        function handleSearch() {
-                          var searchTerm = document.querySelector('.searchbar input').value.toLowerCase();
-                          var results = document.querySelectorAll('.midresult');
-                          // Loop through each result
-                          results.forEach(function(result) {
-                            var text = result.querySelector('.mid').textContent.toLowerCase();
-                            var isVisible = text.includes(searchTerm);
-                            // Show/hide based on search term
-                            if (isVisible) {
-                              result.style.display = 'block';
-                            } else {
-                              result.style.display = 'none';
-                            }
-                          });
-                          // Update the count after filtering
-                          updateResultCount();
-                        }
-                        // Function to update the count
-                        function updateResultCount() {
-                          var countElement = document.querySelector('.count .val');
-                          var visibleResults = document.querySelectorAll('.midresult[style="display: block;"]');
-                          var count = visibleResults.length;
-                          countElement.textContent = count + (count === 1 ? ' Result' : ' Results');
-                        }
-                        // Event listener for search input
-                        document.querySelector('.searchbar input').addEventListener('input', handleSearch);
-                        // Call the function initially to set the count
-                        handleSearch();
-                        
-                      });
-      </script>
+
+
 </body>
 </html>

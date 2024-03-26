@@ -1804,14 +1804,6 @@ input[type=text]::placeholder {
     background-color: rgba(19,19,21,.8)
 }
 
-.modal {
-
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%)
-}
 
 .loading-blinker {
     display: inline-block;
@@ -3246,13 +3238,34 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    width: 600px; /* Adjust as needed */
-    z-index: 1000; /* Adjust as needed */
+    width: 600px; /* Default width */
+    max-width: 90%; /* Set a maximum width */
+    z-index: 1000;
+    background: #fff; /* Just for visibility */
+}
+
+/* Responsive styles using media queries */
+@media screen and (max-width: 768px) {
+    /* Adjust the modal width for smaller screens */
+    .modal {
+        width: 90%; /* Adjust as needed */
+        background: #ff0; /* Just for visibility */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Further adjust the modal width for even smaller screens */
+    .modal {
+        width: 80%; /* Adjust as needed */
+        background: #f00; /* Just for visibility */
+    }
 }
 
 .show-modal {
     display: block;
 }
+
+
 
 .modal-content {
     height: 360px;
