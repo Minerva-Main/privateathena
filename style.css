@@ -881,7 +881,7 @@ input.hidden {
 }
 
 .searchbar {
-    margin-top: 20px
+    margin-top: 10px
 }
 
 .searchbar label {
@@ -895,6 +895,8 @@ input.hidden {
     font-size: 10px;
     margin: 0 0 .5em 0
 }
+
+
 
 .searchbar input[type=search] {
     border: none;
@@ -2345,6 +2347,10 @@ table tr:last-child td {
     outline: none
 }
 
+.button-row[data-v-5b7e43e9] {
+    margin-top: 10px;
+}
+
 .dv-button:focus:after {
     -webkit-animation-name: dv-button-focus;
     animation-name: dv-button-focus;
@@ -3568,6 +3574,93 @@ form {
     letter-spacing: .1em;
     color: #CD2020
   }
+
+  
+  .card-list-entry {
+    
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #98bcd4; 
+    border-top-width: 1; 
+    -webkit-box-sizing: border-box; 
+    box-sizing: border-box; 
+    -webkit-box-flex: 0; 
+    -ms-flex: 0 1; 
+    flex: 0 1; 
+    -ms-flex-preferred-size: 50%; 
+    flex-basis: 50%; /* Adjust this value to change the width of each card list entry */
+    -webkit-transition: background-color .125s ease-in; 
+    transition: background-color .125s ease-in;
+  }
+  
+  .card-list-entry:hover {
+    background-color: rgba(152, 188, 212, 0.3);
+  }
+  
+  .card-title {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 5px;
+    -webkit-transition: background-color .125s ease-in; 
+    transition: background-color .125s ease-in;
+  }
+  
+  .card-description {
+
+    -webkit-transition: background-color .125s ease-in; 
+    transition: background-color .125s ease-in;
+  }
+  
+  .entry {
+    display: flex;
+    align-items: center;
+  }
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .icon img {
+    max-width: 20%;
+    max-height: 20%;
+  }
+  
+  .title {
+    flex: 1;
+    padding-left: 12px;
+  }
+  
+  .remark {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(166, 174, 179, 0.8);
+  }
+  
+  p[data-v-4e5f98e5] {
+    text-decoration: line-through;
+  }
+  .head {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #98bcd4;
+  }
+  
+  .rank-magic {
+    color: #80c040;
+  }
+
+.input[type=text], .note {
+    font-family: Lato,Segoe UI,Tahoma,Verdana,sans-serif;
+    text-transform: uppercase;
+    font-size: 10px;
+    color: #98bcd4;
+    margin-left: 5px;
+    margin-top: -5px;
+}
+ 
+
 
 /*!
 * direction.less v0.1.0
