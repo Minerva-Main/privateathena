@@ -3490,6 +3490,84 @@ button:hover {
    transform: rotate(135deg);  
 }  
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  input[type="file"] {
+     
+     margin: 10px 0; /* Adjusted margin */
+      font-size: 14px; /* Adjusted font size */
+      color: #a6aeb3; /* Adjusted text color */
+      border: 1px solid #98bcd4; /* Adjusted border color */
+      cursor: not-allowed;
+      width: 100%; /* Adjusted width */
+      padding: 8px;
+      padding-left: 10px;
+      padding-right: 6px;
+      text-align: center;
+      background: rgba(19, 19, 21, 0.5); /* Adjusted background color */
+      transition: background-color 0.125s ease-in, color 0.125s ease-in; /* Simplified transition */
+      text-transform: uppercase;
+  }
+
+  input[type="file"]:hover {
+    border-color: #1e90ff; /* Change border color on hover */
+  }
+
+  input[type="submit"] {
+    margin: 10px 0; 
+    font-size: 14px; 
+    border: 1px solid #98bcd4; 
+    cursor: pointer; 
+    width: 70px; 
+    padding: 8px 10px 8px 6px; 
+    text-align: center; 
+    background: rgba(19,19,21,.5); 
+    -webkit-transition: background-color .125s ease-in,color .125s ease-in; 
+    transition: background-color .125s ease-in,color .125s ease-in; 
+    text-transform: uppercase;
+  }
+
+  input [type="ile"] .fa {
+
+    margin-left: .2em; 
+    margin-right: .2em;
+  }
+
+  input[data-v-8a20d036]  {
+    
+    margin: 10px 0; 
+    font-size: 14px; 
+    color: #a6aeb3;
+    border: 1px solid #98bcd4; 
+    cursor: not-allowed; 
+    width: 100%px; 
+    padding: 8px; 
+    padding-left: 10px; 
+    padding-right: 6px; 
+    text-align: center; 
+    background: rgba(19,19,21,.5); 
+    -webkit-transition: background-color .125s ease-in,color .125s ease-in; 
+    transition: background-color .125s ease-in,color .125s ease-in; 
+    text-transform: uppercase;
+}
+
+
+  input[type="submit"]:hover {
+    background: rgba(152,188,212,.5); 
+    color: #fff;
+  }
+
+  .maintenance {
+    cursor: not-allowed;
+    font-size: .6em;
+    letter-spacing: .1em;
+    color: #CD2020
+  }
 
 /*!
 * direction.less v0.1.0
