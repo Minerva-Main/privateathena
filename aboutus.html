@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/favicon.ico">
+    <title>Project Athena</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="../../static.divinitor.com/site/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="../../static.divinitor.com/site/fav/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../../static.divinitor.com/site/fav/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="https://static.divinitor.com/site/fav/manifest.json">
+    <meta name="theme-color" content="#131315">
+    <meta property="og:site_name" content="Divinitor Minerva | DN Reference">
+    <meta property="og:image" content="../../divinitor.com/resources/img/dv-logo.png">
+    <meta property="og:title" content="Artemis">
+    <meta property="og:description" content="Side project to alleviate my pain">
+    <link href="../../maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          var timeSelector = document.querySelector('.selector');
+
+          function updateTime() {
+              
+              var timezone = 'Asia/Singapore'; 
+              var options = { timeZone: timezone, hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+
+              
+              var currentTime = new Date().toLocaleTimeString('en-US', options);
+
+              var gmtOffset = new Date().toLocaleTimeString('en-US', { timeZoneName: 'short', timeZone: timezone });
+
+              
+              timeSelector.innerHTML = '<i class="fa fa-globe"></i>  ( ' + gmtOffset + ')';
+          }
+
+          
+          updateTime();
+
+          
+          setInterval(updateTime, 1000);
+      });
+  </script>
+    <script>
+       document.addEventListener("DOMContentLoaded", function() {
+            var menuIcon = document.querySelector('.menu-icon');
+            var mobileMenu = document.querySelector('.mobile');
+
+            function toggleMenu() {
+                // Toggle the opacity property between 0 and 1
+                mobileMenu.style.opacity = (mobileMenu.style.opacity === '1') ? '0' : '1';
+
+                // Toggle the pointer-events property between 'auto' and 'none'
+                mobileMenu.style.pointerEvents = (mobileMenu.style.pointerEvents === 'auto') ? 'none' : 'auto';
+            }
+
+            // Initially, add the event listener
+            menuIcon.addEventListener('click', toggleMenu);
+        });
+  </script>
+  </script>
+</head>
+<body>
+  <div class="snipcss-J3Gkj">
+    <div class="startup hidden" id="startup-shade">
+      <div class="container">
+        <div class="sub"> </div>
+        <div class="title"> </div>
+        <div class="detail"> </div>
+      </div>
+    </div>
+    <div id="app" class="">
+      <div class="site-header">
+        <div class="header-left">
+          <a href="/" class="header-link router-link-exact-active router-link-active">
+            <h1> Project ATHENA </h1>
+            <div class="subtitle"> Semi-Automated E-Library </div>
+          </a>
+        </div>
+        <div class="mobile-header-right mobile-only">
+          <div data-v-1739f80a="" class="nav">
+            <div data-v-1739f80a="" class="mobile" style="opacity: 0; transition: opacity 0.5s ease ; pointer-events: none;">
+              <h1 data-v-1739f80a="">Navigation</h1>
+              <ul data-v-1739f80a="" style="transform: translateX(0px); opacity: 1;">
+                <a data-v-1739f80a="" href="/" class="">
+                  <li data-v-1739f80a="">Home</li>
+                </a>
+                <a data-v-1739f80a="" href="/class.html" class="">
+                  <li data-v-1739f80a="">MODULES</li>
+                </a>
+                <a data-v-1739f80a="" href="/e-books.html" class="">
+                  <li data-v-1739f80a="">Upload</li>
+                </a>
+                <a data-v-1739f80a="" href="/e-books.html" class="">
+                  <li data-v-1739f80a="" class="new">E-BOOKS</li>
+                </a>
+                <a data-v-1739f80a="" href="/aboutus.html" class="router-link-exact-active router-link-active">
+                  <li data-v-1739f80a="">ABOUT US</li>
+                </a>
+              </ul>
+            </div>
+            <div data-v-1739f80a="" class="mobile-only">
+              <div data-v-1739f80a="" class="menu-icon">
+                <i data-v-1739f80a="" class="fa fa-navicon"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><div class="auth-box">
+        <div data-v-30222694="" class="site-auth-header">
+          <div data-v-30222694="" error="true" class="guest">
+            <div data-v-30222694="">
+              <p data-v-30222694=""> Hello, <strong data-v-30222694=""> Guest! </strong>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div><div class="region-indicator">
+        <div data-v-4f32b89c="" class="locale-select">
+          <div data-v-4f32b89c="" class="selector">
+            <i data-v-4f32b89c="" class="fa fa-globe"></i> Version 1.5.7a
+          </div>
+        </div>
+      </div><div class="appbody">
+        <div class="flex-box">
+          <div class="left-pane mobile-hide">
+            <div data-v-1739f80a="" class="nav">
+              <div data-v-1739f80a="" class="mobile-hide">
+                <h1 data-v-1739f80a=""> Navigation </h1>
+                <ul data-v-1739f80a="">
+                  <a data-v-1739f80a="" href="/" class="">
+                    <li data-v-1739f80a=""> Home </li>
+                  </a>
+                  <a data-v-1739f80a="" href="/class.html" class="">
+                    <li data-v-1739f80a="">MODULES</li>
+                  </a>
+                  </a>
+                  <a data-v-1739f80a="" href="/upload.html" class="">
+                    <li data-v-1739f80a="">Upload</li>
+                  </a>
+                  <a data-v-1739f80a="" href="/e-books.html" class="">
+                    <li data-v-1739f80a="" class="new">E-BOOKS</li>
+                  </a>
+                  <a data-v-1739f80a="" href="/aboutus.html" class="router-link-exact-active router-link-active">
+                    <li data-v-1739f80a="">ABOUT US</li>
+                  </a>
+                </ul>
+                <div data-v-1739f80a="" class="related-links">
+                  <div data-v-1739f80a="" class="link">
+                    <a data-v-1739f80a="" href="/" target="_blank"> Home </a>
+                  </div>
+                  <div data-v-1739f80a="" class="link">
+                    <a data-v-1739f80a="" href="#" target="_blank"> Discord </a>
+                  </div>
+                  <div data-v-1739f80a="" class="link-header"> Athena </div>
+                </div>
+              </div>
+              <div data-v-1739f80a="" class="mobile-only">
+                <div data-v-1739f80a="" class="menu-icon">
+                  <i data-v-1739f80a="" class="fa fa-navicon"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="main-pane">
+            <div data-v-8c7c2924="" data-v-cd026710="" class="maps">
+                <h1 data-v-8c7c2924="" class="divided">ABOUT US</h1>
+                <div class="aboutustext">
+                  
+                  <div data-v-4e5f98e5="" class="dl-info snipcss-qiNNR" style="">
+                    <h3 data-v-4e5f98e5="" class="title">
+                      WEBSITE description
+                    </h3>
+                    <table data-v-4e5f98e5="" class="data-list" >
+                      <tbody>
+                        <tr data-v-4e5f98e5="">
+                          <th data-v-4e5f98e5="">
+                            Date Created
+                          </th>
+                          <td data-v-4e5f98e5="">
+                            DEC 03 2023
+                          </td>
+                        </tr>
+                        <tr data-v-4e5f98e5="">
+                          <th data-v-4e5f98e5="">
+                            Total website size
+                          </th>
+                          <td data-v-4e5f98e5="">
+                            4.28 MB
+                          </td>
+                        </tr>
+                        <tr data-v-4e5f98e5="">
+                          <th data-v-4e5f98e5="">
+                            Number of Files
+                          </th>
+                          <td data-v-4e5f98e5="">
+                            22
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  <p>I'm kinda out of it rn so I made this out of pure boredom so if ya'll see this. I'm sorry. </p>
+                  
+                  </div>
+                  <ul data-v-4e5f98e5>
+                    <li data-v-4e5f98e5>
+                      In <a href="/class.html" style="font-weight: bold;">MODULES</a> it stores all the modules (First semester and Second Semster) that was covered in Computer System Services strand
+                    </li>
+                    <p style="font-weight: bold; text-transform: uppercase;"> Change logs </p>
+                    <div class="changelogmodules">
+                      <button class="showchange" onclick="toggleCode('showcode1')"> SHOW</button>
+                    </div>
+                    <code data-v-4e5f98e5 class="block snipcss0-0-0-1 snipcss-DCUxz" style="margin-top: 5px; margin-bottom: 20px; display: none;" id="showcode1">12/27/23 - Created a div grid box that was based on the vahr's website <br> 12/29/23 - Added all the subjects and added icons for it <br> 01/04/24 - Manually added all the files inside the folder <br> 03/10/24 - Decided it was so static and trash and completely remade it into searchable list <br> 03/11/24 - Added AJAX XMLHttprequest for the second sem button so that it can dynamically load without the website loading <br> 03/13/24 - Added Modals cause it looks fresh.<br> 03/15/24 - Finally done did it and debugged all the stuff that was making the javascript unable to run.<br> 03/16/24 - Linked all the modules into the grids inside the modules.</code>
+                    <li data-v-4e5f98e5>
+                      <a href="/upload.html" style="font-weight: bold;">UPLOADS </a> Is where you can upload files that you think that can provide more information on our project, like modules and other works. It's currently not working cause I've yet to fix it.
+                    </li>
+                    <p style="font-weight: bold; text-transform: uppercase;"> Change logs </p>
+                    <div class="changelogmodules">
+                      <button class="showchange" onclick="toggleCode('showcode2')"> SHOW</button>
+                    </div>
+                    <code data-v-4e5f98e5 class="block snipcss0-0-0-1 snipcss-DCUxz" style="margin-top: 10px; margin-bottom: 20px; display: none;" id="showcode2">03/10/24 - Added the buttons for you to choose what file to upload and submit buttons <br> 03/10/24 - Added PHP code in the form for it to work but the hosting website does not offer having server sided scripts lmao.</code>
+                    <li>
+                      <p>The <a href="/e-books.html" style="font-weight: bold;"> E-BOOKS </a>is where you look for E-books that you want to read. It works most of the time and I've yet to optimize it by adding a refresh button to refresh your searches.</p>
+                    </li>
+                    <p style="font-weight: bold; text-transform: uppercase;"> Change logs </p>
+                    <div class="changelogmodules">
+                      <button class="showchange" onclick="toggleCode('showcode3')"> SHOW</button>
+                    </div>
+                      <code data-v-4e5f98e5 class="block snipcss0-0-0-1 snipcss-DCUxz" style="margin-top: 10px; margin-bottom: 20px; display: none;" id="showcode3">03/11/24 - Added the api to the website. <br> 03/11/24 - Added the search bar and the search button. Also redesigned the interface for the searched books cause it looked trash at the beginning.</code>
+                    <li>
+                     <p><a href="aboutus.html" style="text-transform: uppercase; font-weight: bold;">about us</a> is what you're reading now and it shows the description of the website and what we did.</p>
+                     <p style="font-weight: bold; text-transform: uppercase;"> Change logs </p>
+                    </li>
+                    <div class="changelogmodules">
+                      <button class="showchange" onclick="toggleCode('showcode4')"> SHOW</button>
+                    </div>
+                    <code data-v-4e5f98e5 class="block snipcss0-0-0-1 snipcss-DCUxz" style="margin-top: 10px; margin-bottom: 20px; display: none;" id="showcode4">03/28/24 - Added details. I dont know what to put here lmaooo.</code>
+                  </ul>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+      <script>
+    function toggleCode(codeId) {
+  const codeElement = document.getElementById(codeId);
+  const button = event.currentTarget; // Get the button that was clicked
+
+  if (!codeElement) {
+    console.error("Element with ID '" + codeId + "' not found.");
+    return;
+  }
+
+  var displayStyle = window.getComputedStyle(codeElement).display;
+
+  if (displayStyle === "none") {
+    codeElement.style.display = "block";
+    codeElement.classList.add("show-code");
+    button.textContent = "CLOSE"; // Change button text to CLOSE
+  } else {
+    codeElement.classList.remove("show-code");
+    setTimeout(function() {
+      codeElement.style.display = "none";
+    }, 0); // Adjust the timeout value if needed
+    button.textContent = "SHOW"; // Change button text back to SHOW
+  }
+}
+      </script>
+      <div class="startup" started="true">
+        <div class="container">
+          <div class="sub"> Divinitor </div>
+          <div class="title"> Minerva </div>
+          <div class="detail"> Now loading </div>
+        </div>
+      </div>
+      <div id="tooltip-host"></div>
+</body>
+</html>

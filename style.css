@@ -2061,7 +2061,7 @@ table tr th {
     padding: 4px 12px 4px 0;
     text-align: right;
     color: #98bcd4;
-    font-size: 12px;
+
     font-weight: 400;
     text-transform: uppercase
 }
@@ -3660,8 +3660,35 @@ form {
     margin-top: -5px;
 }
  
+.aboutustext p{
+    padding-right: 100px;
+    letter-spacing: -.005em;
+}
 
+.aboutustext .updateaboutus {
+    font-size: 20px;
+    text-transform: uppercase;
+}
 
+.showchange {
+    margin-bottom: 10px;
+}
+
+.show-code {
+    animation: slideDown ease-in-out 0.4s forwards;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px); /* Slide down from 10px above */
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0); /* Slide down to its original position */
+    }
+  }
 /*!
 * direction.less v0.1.0
 *
