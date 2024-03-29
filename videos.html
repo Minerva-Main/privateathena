@@ -61,7 +61,6 @@
             menuIcon.addEventListener('click', toggleMenu);
         });
   </script>
-  </script>
 </head>
 <body>
   <div class="snipcss-J3Gkj">
@@ -170,16 +169,64 @@
                 <h1 data-v-8c7c2924="">Upload<span class="maintenance">(Maintenance) <i class="icon fa fa-lock"></i></span></h1>
                 <p data-v-4e5f98e5>You can also help us by providing other works that helps us give more information about computer system Services.</p>
                 <p>Okay I'm still learning php for it to work so in the mean time I'll keep it disabled. (Or yall can help me figure this out ( ͡° ͜ʖ ͡°) )</p>
-                <form action="/action_page.php">
-                  <input type="file" id="myFile" name="filename" data-v-8a20d036="" disabled>
+                <form id="uploadForm" enctype="multipart/form-data">
+                  <input type="file" name="fileToUpload" id="fileToUpload" data-v-8a20d036="">
                   <div> 
-                  <input data-v-8a20d036="" data-v-69a110db="" type="submit" disabled>
+                      <input data-v-8a20d036="" data-v-69a110db="" type="submit">
                   </div>
-                </form>
-                
+              </form>
+              <code data-v-4e5f98e5="" class="block snipcss0-0-0-1 snipcss-DCUxz">
+                <div id="errorMessage" style="display: none;"></div>
+              </code>
+              
+              
               </div>
         </div>
       </div>
+        <script> 
+      document.getElementById('uploadForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var fileInput = document.getElementById('fileToUpload');
+    var file = fileInput.files[0];
+    var formData = new FormData();
+    formData.append('fileToUpload', file);
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'action_page.php', true);
+    xhr.onload = function() {
+      if (xhr.status == 200) {
+        if (xhr.responseText === 'success') {
+          document.getElementById('uploadMessage').style.display = 'block';
+          document.getElementById('errorMessage').style.display = 'none';
+          appendLog('File uploaded successfully.');
+        } else {
+          document.getElementById('errorMessage').innerText = xhr.responseText;
+          document.getElementById('errorMessage').style.display = 'block';
+          document.getElementById('uploadMessage').style.display = 'none';
+          appendLog('Error: ' + xhr.responseText);
+        }
+      } else {
+        document.getElementById('errorMessage').innerText = 'Error uploading file. Please try again later.';
+        document.getElementById('errorMessage').style.display = 'block';
+        document.getElementById('uploadMessage').style.display = 'none';
+        appendLog('Error uploading file. Please try again later.');
+      }
+    };
+    xhr.send(formData);
+  });
+
+  function appendLog(message) {
+  var errorMessageContainer = document.getElementById('errorMessage');
+  errorMessageContainer.style.display = 'block';
+  
+  var errorMessageElement = document.createElement('p');
+  errorMessageElement.textContent = message;
+  
+  errorMessageContainer.appendChild(errorMessageElement);
+}
+        </script>
+
       <div class="startup" started="true">
         <div class="container">
           <div class="sub"> Divinitor </div>
