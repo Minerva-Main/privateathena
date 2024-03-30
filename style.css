@@ -1643,6 +1643,7 @@ input.hidden {
 }
 
 .options-list .option {
+    display: block;
     border: 1px solid #5aa9e5;
     border-top-color: transparent;
     background: rgba(19,19,21,.4);
@@ -1698,6 +1699,22 @@ input[type=text] {
     font-size: 14px;
     text-align: left;
     min-width: 200px;
+    border-bottom: 1px solid rgba(152,188,212,.5);
+    -webkit-transition: border-color .125s ease-in;
+    transition: border-color .125s ease-in;
+    font-family: Lato,Segoe UI,Tahoma,Verdana,sans-serif
+}
+
+
+
+
+div.main-pane [type=text] {
+    background: none;
+    border: none;
+    color: #98bcd4;
+    font-size: 20px;
+    text-align: left;
+    width: 100%;
     border-bottom: 1px solid rgba(152,188,212,.5);
     -webkit-transition: border-color .125s ease-in;
     transition: border-color .125s ease-in;
@@ -3689,6 +3706,30 @@ form {
       transform: translateY(0); /* Slide down to its original position */
     }
   }
+
+  .user-message:before {
+    content: "Me: ";
+    font-weight: bold;
+    color: #fdfdfd; /* Blue color */
+}
+
+.bot-message:before {
+    content: "Minerva: ";
+    font-weight: bold;
+    color: #98bcd4; /* Green color */
+}
+.botplaceholder {
+    background: none;
+    border: none;
+    color: #98bcd4;
+    font-size: 14px;
+    text-align: left;
+ 
+    border-bottom: 1px solid rgba(152,188,212,.5);
+    -webkit-transition: border-color .125s ease-in;
+    transition: border-color .125s ease-in;
+    font-family: Lato,Segoe UI,Tahoma,Verdana,sans-serif;
+}
 /*!
 * direction.less v0.1.0
 *
