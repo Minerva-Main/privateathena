@@ -1643,6 +1643,8 @@ input.hidden {
 }
 
 .options-list .option {
+     max-height: 500px; /* Adjust the max height as needed */
+    overflow-y: auto; /* Add a vertical scrollbar when content overflows */
     display: block;
     border: 1px solid #5aa9e5;
     border-top-color: transparent;
@@ -1654,7 +1656,14 @@ input.hidden {
     -ms-flex-direction: row;
     flex-direction: row
 }
+.option::-webkit-scrollbar {
+    width: 5px; /* Set the width of the scrollbar */
+}
 
+.option::-webkit-scrollbar-thumb {
+    background-color: #5aa9e5; /* Set the color of the scrollbar thumb */
+    border-radius: 5px; /* Add border radius for a rounded appearance */
+}
 .options-list .option:first-child {
     border-top-color: #5aa9e5
 }
