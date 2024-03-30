@@ -60,16 +60,45 @@ async function sendMessage(message) {
 }
 
 function formatMessage(message) {
-    // Replace **text** with bold tags
-    message = message.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+// Replace **text** with bold tags
+message = message.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
     
-    // Replace *text* with italic tags
-    message = message.replace(/\*(.*?)\*/g, '<em>$1</em>');
-    
-    // Replace <br> with line breaks
-    message = message.replace(/<br>/g, '<br>');
+// Replace *text* with italic tags
+message = message.replace(/\*(.*?)\*/g, '<em>$1</em>');
 
-    return message;
+// Replace <s>text</s> with strikethrough tags
+message = message.replace(/<s>(.*?)<\/s>/g, '<s>$1</s>');
+
+// Replace <u>text</u> with underline tags
+message = message.replace(/<u>(.*?)<\/u>/g, '<u>$1</u>');
+
+// Replace [text](url) with hyperlink tags
+message = message.replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
+
+// Replace # Header with header tags
+message = message.replace(/# (.+?)\n/g, '<h1>$1</h1>\n');
+message = message.replace(/## (.+?)\n/g, '<h2>$1</h2>\n');
+message = message.replace(/### (.+?)\n/g, '<h3>$1</h3>\n');
+message = message.replace(/#### (.+?)\n/g, '<h4>$1</h4>\n');
+message = message.replace(/##### (.+?)\n/g, '<h5>$1</h5>\n');
+
+// Replace ```code block``` with code block tags
+message = message.replace(/```([\s\S]*?)```/g, '<pre>$1</pre>');
+
+// Replace --- with horizontal rule
+message = message.replace(/---/g, '<hr>');
+
+// Replace * or - with list item tags
+message = message.replace(/^\s*([-*])\s*(.*)$/gm, '<li>$2</li>');
+
+// Replace > with blockquote tags
+message = message.replace(/^(>+)(.*)$/gm, '<blockquote>$2</blockquote>');
+
+// Replace `inline code` with code tags
+message = message.replace(/`([^`]+)`/g, '<code>$1</code>');
+
+return message;
+
 }
 
 function displayMessage(message, sender) {
