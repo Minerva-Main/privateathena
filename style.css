@@ -3739,6 +3739,10 @@ form {
     transition: border-color .125s ease-in;
     font-family: Lato,Segoe UI,Tahoma,Verdana,sans-serif;
 }
+
+.greyshit {
+    color: gray;
+}
 /*!
 * direction.less v0.1.0
 *
